@@ -25,6 +25,8 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
 import { LoginService } from '@core/authentication/login.service';
 import { FakeLoginService } from './fake-login.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { optionReducer } from './counter.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,6 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       },
     }),
     BrowserAnimationsModule,
+    /* StoreModule.forRoot({}, {}), */
+    StoreModule.forRoot({ options: optionReducer })
   ],
   providers: [ 
     { provide: BASE_URL, useValue: environment.baseUrl },
