@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-toolbar>
+    <h4>Recipients</h4>
+    <button mat-raised-button color="primary" class="add_button" (click)="AddNew()">Add New</button>
+  </mat-toolbar>
+
+  <!-- <div class="col-md-12"> -->
+    <mtx-grid [data]="list" [columns]="columns" [cellTemplate]="{ action: ActionTpl }"> </mtx-grid>
+    <ng-template #ActionTpl>
+      <button type="button" class="btn btn-link customRemoveBtn">Remove</button>
+      <button type="button" class="btn btn-link customEditBtn" (click)="updateBranch()">Edit</button>
+    </ng-template>
+  <!-- </div> -->
+</mat-card>

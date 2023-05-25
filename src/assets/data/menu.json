@@ -32,6 +32,12 @@
           "type": "link"
         }
       ]
+    },
+    {
+      "route": "branch",
+      "name": "Branch",
+      "type": "link",
+      "icon": "book"  
     }
   ]
 }

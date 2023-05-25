@@ -1,0 +1,32 @@
+
+<!-- customer-detail.component.html -->
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Branch Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="form-field-container">
+        <mat-form-field>
+          <input matInput placeholder="Branch Name" [(ngModel)]="branch.name">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-field-container">
+        <mat-form-field>
+          <input matInput placeholder="Branch Code" [(ngModel)]="branch.phone">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-field-container">
+        <mat-form-field>
+          <textarea matInput placeholder="Branch Phone" [(ngModel)]="branch.address"></textarea>
+        </mat-form-field>
+      </div>
+  
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="saveBranch()">Save</button>
+        <button mat-raised-button color="warn" (click)="back()">Cancel</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

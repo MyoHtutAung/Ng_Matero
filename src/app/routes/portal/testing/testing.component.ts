@@ -1,44 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { MtxGridColumn } from '@ng-matero/extensions/grid';
-import { EXAMPLE_DATA } from '@shared/interfaces/grid_data';
+import { Component, Input, OnInit } from '@angular/core';
+import { PortalService } from '../portal.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-testing',
   templateUrl: './testing.component.html',
   styleUrls: ['./testing.component.scss'],
+  providers: [PortalService],
 })
 export class TestingComponent implements OnInit {
-  //list : any = {};
+  list: any;
+  firstone: any;
+  option1: any;
+  id: any;
 
-  columns: MtxGridColumn[] = [
-    { header: 'Name', field: 'name' },
-    {
-      header: 'Weight',
-      field: 'weight',
-      type: 'number',
-      typeParameter: {
-        digitsInfo: '1.2-2',
-      },
-    },
-    { header: 'Gender', field: 'gender' },
-    { header: 'Mobile', field: 'mobile' },
-    { header: 'City', field: 'city' },
-    {
-      header: 'Date',
-      field: 'date',
-      type: 'date',
-      typeParameter: {
-        format: 'yyyy-MM-dd',
-      },
-    },
-    { header: 'Football', field: 'Footballs'}
-  ];
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
 
-  list = EXAMPLE_DATA;
+
+  constructor(private portalservice: PortalService,private _formBuilder: FormBuilder) {
+    this.list = this.portalservice.getAccountList();
+    this.firstone = this.list[0];
+  }
 
   ngOnInit(): void {}
-
-  trackByName(index: number, item: any) {
-    return item.name;
-  }
 }

@@ -24,7 +24,15 @@ const routes: Routes = [
       { path: '403', component: Error403Component },
       { path: '404', component: Error404Component },
       { path: '500', component: Error500Component },
-      { path: 'test', loadChildren:()=> import('./portal/portal.module').then( m => m.PortalModule)}
+      {
+        path: 'test',
+        loadChildren: () => import('./portal/portal.module').then(m => m.PortalModule),
+      },
+      {
+        path: 'branch',
+        loadChildren: () => import('./branch/branch.module').then(m => m.BranchModule),
+      },
+     /*  { path: 'branch', component: BranchComponent} */
     ],
   },
   {
