@@ -1,4 +1,4 @@
-.customLabel {
+/* .customLabel {
   opacity: 1;
   color: #999999;
   font-family: 'Rubik-Regular';
@@ -49,5 +49,40 @@
 .mat-mdc-form-field {
   margin-top: 16px;
 }
+
+.custom-stepper .mat-step-header{
+  display: none;
+}
+
+.mat-datepicker-content .mat-calendar-body .mat-calendar-cell-disabled {
+  pointer-events: none;
+}
+
+.row{
+  padding: 20px;
+} */
+
+/* .mat-datepicker-content .mat-calendar-body .mat-calendar-cell-disabled {
+  pointer-events: none;
+} */
+
+/* :host ::ng-deep .mdc-text-field--outlined {
+  border-left: 10px solid #ffa300;
+  border-radius: 15px;
+}
+
+.disable-date, .disable-date:hover {
+  pointer-events: none;
+  opacity: 0.5;
+  background-color: #eee;
+} */
+
+.disable-date {
+  pointer-events: none;
+  opacity: 0.5;
+  background-color: #eee;
+}
+
+
 
 

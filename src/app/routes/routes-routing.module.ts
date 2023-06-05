@@ -11,6 +11,10 @@ import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 import { AuthGuard } from '@core';
+import { DateTestingComponent } from './date-testing/date-testing.component';
+import { ScafDateComponent } from './scaf-date/scaf-date.component';
+import { OtpComponent } from './otp/otp.component';
+import { TestpagiComponent } from './testpagi/testpagi.component';
 
 const routes: Routes = [
   {
@@ -19,7 +23,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'test', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: '403', component: Error403Component },
       { path: '404', component: Error404Component },
@@ -33,6 +37,9 @@ const routes: Routes = [
         loadChildren: () => import('./branch/branch.module').then(m => m.BranchModule),
       },
      /*  { path: 'branch', component: BranchComponent} */
+     { path: 'date', component: DateTestingComponent},
+     { path: 'scalf', component: ScafDateComponent},
+     { path: 'otp', component: OtpComponent}
     ],
   },
   {
@@ -41,6 +48,7 @@ const routes: Routes = [
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'pagi', component: TestpagiComponent}
     ],
   },
   { path: '**', redirectTo: 'dashboard' },

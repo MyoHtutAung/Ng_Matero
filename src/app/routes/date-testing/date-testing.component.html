@@ -1,0 +1,16 @@
+<mat-form-field appearance="outline">
+    <input matInput [matDatepicker]="fromDatePicker" [max]="frommaxDate" [formControl]="fromDate" (dateChange)="clickFromDate()" placeholder="Select From Date">
+    <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #fromDatePicker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <input matInput [matDatepicker]="toDatePicker" [min]="minDate" [max]="maxDate" [formControl]="toDate" placeholder="Select To Date">
+    <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #toDatePicker></mat-datepicker>
+</mat-form-field>
+
+<button mat-raised-button class="bg-theme customBtn" (click)="clickSearch()">
+    Search
+  </button>
+  <button type="button" class="btn btn-link customClearBtn">Clear All</button>

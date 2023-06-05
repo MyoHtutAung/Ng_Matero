@@ -5,8 +5,9 @@ import { PortalRoutingModule } from './portal-routing.module';
 import { GridComponent } from './grid/grid.component';
 import { TestingComponent } from './testing/testing.component';
 import { SharedModule } from '@shared';
+import { ScafDateComponent } from '../scaf-date/scaf-date.component';
 
-const COMPONENTS : any[] = [GridComponent,TestingComponent]
+const COMPONENTS : any[] = [GridComponent,TestingComponent,ScafDateComponent]
 
 @NgModule({
   declarations: [
